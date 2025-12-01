@@ -1,228 +1,94 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Q4 Earnings – Interactive Report</title>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Q4 Earnings RevealJS Report</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Reveal.js core CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css">
+</head>
 
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css">
+<body>
+<div class="reveal">
+  <div class="slides">
 
-    <style>
-      .subtitle {
-        font-size: 0.6em;
-        opacity: 0.8;
-      }
-      .email {
-        font-size: 0.7em;
-        margin-top: 0.5em;
-      }
-      .kpi {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        margin-top: 1.5rem;
-      }
-      .kpi-card {
-        border-radius: 12px;
-        padding: 1rem 1.5rem;
-        background: rgba(255,255,255,0.07);
-        box-shadow: 0 12px 24px rgba(0,0,0,0.35);
-      }
-      .kpi-label {
-        font-size: 0.6em;
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        opacity: 0.7;
-      }
-      .kpi-value {
-        font-size: 1.4em;
-        font-weight: bold;
-      }
-      .version-hint {
-        font-size: 0.5em;
-        opacity: 0.7;
-        margin-top: 1.5em;
-      }
-    </style>
-  </head>
+    <!-- Slide 1 -->
+    <section>
+      <h1>Quarterly Earnings Report</h1>
+      <p>Prepared by: <b>25ds2000003@ds.study.iitm.ac.in</b></p>
+      <aside class="notes">
+        Welcome everyone. This deck is built using RevealJS.
+      </aside>
+    </section>
 
-  <body>
-    <div class="reveal">
-      <div class="slides">
+    <!-- Markdown -->
+    <section data-markdown>
+      <textarea data-template>
+## Revenue Highlights
+- Total Revenue: **$4.2B**
+- YoY Growth: **12.5%**
+- Strong fintech partnerships
+      </textarea>
+    </section>
 
-        <!-- TITLE SLIDE -->
-        <section>
-          <h2>Q4 Earnings Report</h2>
-          <div class="subtitle">Interactive Stakeholder Briefing</div>
-          <p class="email">
-            Prepared by: 25ds2000003@ds.study.iitm.ac.in
-          </p>
-          <div class="kpi">
-            <div class="kpi-card fragment">
-              <div class="kpi-label">Revenue</div>
-              <div class="kpi-value">$4.2B</div>
-            </div>
-            <div class="kpi-card fragment">
-              <div class="kpi-label">Net Income</div>
-              <div class="kpi-value">$610M</div>
-            </div>
-            <div class="kpi-card fragment">
-              <div class="kpi-label">EPS (Basic)</div>
-              <div class="kpi-value">$2.15</div>
-            </div>
-          </div>
+    <!-- Fragments -->
+    <section>
+      <h3>Performance Drivers</h3>
+      <ul>
+        <li class="fragment">Retail banking expansion</li>
+        <li class="fragment">Payments partnerships</li>
+        <li class="fragment">Wealth advisory inflows</li>
+      </ul>
+    </section>
 
-          <p class="version-hint">
-            Tip for GitHub Pages: append <code>?v=1</code>, <code>?v=2</code>, … to refresh cached content.
-          </p>
+    <!-- Code -->
+    <section>
+      <h3>EPS Calculation</h3>
+      <pre><code class="language-python">
+def eps(net_income, shares):
+    return net_income / shares
 
-          <aside class="notes">
-            Welcome stakeholders and briefly position this as a modern,
-            interactive Reveal.js-based earnings deck. Call out that key KPIs
-            appear progressively as fragments to keep focus controlled.
-          </aside>
-        </section>
+print(eps(610_000_000, 284_000_000))
+      </code></pre>
+      <aside class="notes">
+        Simple EPS computation using Python.
+      </aside>
+    </section>
 
-        <!-- MARKDOWN SLIDE (required) -->
-        <section data-markdown>
-          <textarea data-template>
-## Revenue Highlights (Markdown Slide)
+    <!-- Math -->
+    <section>
+      <h3>CAGR Formula</h3>
+      <p>
+      \[
+      CAGR = \left(\frac{V_f}{V_i}\right)^{1/n} - 1
+      \]
+      </p>
+    </section>
 
-- **Total revenue:** $4.2B  
-- **YoY growth:** **12.5%**
-- **Primary drivers:**
-  - Retail banking expansion
-  - Digital payment volumes
-  - Wealth management advisory fees
+  </div>
+</div>
 
-> All numbers are illustrative for demo purposes.
+<script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
 
-Notes:
-- This entire slide is written in **Markdown**.
-- RevealJS parses it at runtime.
-          </textarea>
-        </section>
+<script>
+Reveal.initialize({
+  slideNumber: true,
+  hash: true,
+  plugins: [
+    RevealMarkdown,
+    RevealHighlight,
+    RevealNotes,
+    RevealMath.KaTeX
+  ]
+});
+</script>
 
-        <!-- FRAGMENTS / ANIMATIONS -->
-        <section>
-          <h2>Segment Performance</h2>
-          <p>Click forward to reveal each segment:</p>
-          <ul>
-            <li class="fragment">Retail Banking – steady deposit growth and card spend.</li>
-            <li class="fragment">Corporate &amp; Investment Banking – strong ECM/DCM pipeline.</li>
-            <li class="fragment">Wealth &amp; Asset Management – AUM inflows driven by digital onboarding.</li>
-            <li class="fragment">Payments &amp; Fintech Partnerships – double-digit growth in transaction volumes.</li>
-          </ul>
-
-          <aside class="notes">
-            Pause after each bullet to allow discussion. Emphasize that
-            the fragments mimic a guided storytelling approach, ensuring
-            the audience stays aligned with each segment before moving on.
-          </aside>
-        </section>
-
-        <!-- CODE SAMPLE WITH SYNTAX HIGHLIGHTING -->
-        <section>
-          <h2>Analytical Pipeline (Code Sample)</h2>
-          <p>Illustrative Python snippet for computing quarterly EPS from raw feeds:</p>
-
-          <pre><code class="language-python" data-trim data-noescape>
-import pandas as pd
-
-def compute_eps(income_stmt: pd.DataFrame, shares_out: float) -> float:
-    """
-    Compute Earnings Per Share (EPS).
-
-    EPS = (Net Income - Preferred Dividends) / Weighted Avg Shares
-    """
-    net_income = income_stmt["net_income"].iloc[-1]
-    pref_div = income_stmt.get("preferred_dividends", pd.Series([0])).iloc[-1]
-    return (net_income - pref_div) / shares_out
-
-if __name__ == "__main__":
-    df = pd.read_csv("q4_income_statement.csv")
-    eps = compute_eps(df, shares_out=284_000_000)
-    print(f"Q4 EPS: {eps:.2f}")
-          </code></pre>
-
-          <aside class="notes">
-            Explain that the code is illustrative, showing how we might
-            take the final row of an income statement feed and convert it
-            into a quarterly EPS figure. Reference the docstring that
-            explicitly states the formula for clarity.
-          </aside>
-        </section>
-
-        <!-- MATH / FINANCIAL FORMULAS -->
-        <section>
-          <h2>Financial Formulas</h2>
-          <p>Key valuation and risk metrics presented using LaTeX-powered math:</p>
-
-          <h4>Net Present Value (NPV)</h4>
-          <p>
-            \[
-              \text{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1 + r)^t} - C_0
-            \]
-          </p>
-
-          <h4>Expected Return (CAPM)</h4>
-          <p>
-            \[
-              \mathbb{E}[R_i] = R_f + \beta_i \bigl( \mathbb{E}[R_m] - R_f \bigr)
-            \]
-          </p>
-
-          <h4>Compound Annual Growth Rate (CAGR)</h4>
-          <p>
-            \[
-              \text{CAGR} =
-              \left( \frac{\text{Ending Value}}{\text{Beginning Value}} \right)^{\tfrac{1}{n}} - 1
-            \]
-          </p>
-
-          <aside class="notes">
-            Walk through each equation:
-            - NPV for project evaluation.
-            - CAPM for expected return vs. market.
-            - CAGR for multi-year growth of revenue or AUM.
-            Stress that these formulas underlie the dashboards and KPIs
-            stakeholders see, reinforcing that the analytics are grounded
-            in standard finance theory.
-          </aside>
-        </section>
-
-        <!-- GITHUB PAGES & CACHE-BUSTING HINT -->
-        <section>
-          <h2>GitHub Pages &amp; Cache Refresh</h2>
-          <ul>
-            <li class="fragment">Host this file as <code>index.html</code> in a GitHub repository.</li>
-            <li class="fragment">Enable GitHub Pages (for example: <code>main</code> branch, <code>/root</code> folder).</li>
-            <li class="fragment">
-              Access your deck at:  
-              <code>https://&lt;username&gt;.github.io/&lt;repo-name&gt;/</code>
-            </li>
-            <li class="fragment">
-              To force a refresh when you update the file, append a query string version:  
-              <code>?v=1</code>, <code>?v=2</code>, etc.  
-              e.g. <code>https://&lt;username&gt;.github.io/&lt;repo&gt;/?v=3</code>
-            </li>
-          </ul>
-
-          <aside class="notes">
-            Clarify that GitHub Pages sometimes serves cached content.
-            Using a versioned query parameter ensures stakeholders always
-            see the latest iteration of the earnings deck without them
-            needing to clear their browser cache.
-          </aside>
-        </section>
-
-      </div>
-    </div>
-
-    <!-- Reveal.js core J
+</body>
+</html>
